@@ -21,7 +21,7 @@ source:
     sha256: 2e65fa069a23365440a3c56c556b8673b5e32a283800d8d9b257e3f584ce0675
 
 build:
-  number: ${{ build }}
+  number: ${{ build + 100 if tk_variant == 'noxft' and linux else build }}
   string: ${{ string_prefix }}h${{ hash }}_${{ build }}
   variant:
     use_keys:
